@@ -5,6 +5,7 @@ import checkLoggedIn from '../lib/checkLoggedIn'
 import SignoutButton from '../components/SignoutButton';
 import {useQuery} from '@apollo/react-hooks';
 import gql from 'graphql-tag';
+import Link from 'next/link';
 
 const BLOG_POST_LIST = gql`query MyQuery {
   posts: Blog_listPost {
@@ -38,8 +39,14 @@ const IndexPage = ({ loggedInUser }) => {
         {data && data.posts && (
           data.posts.edges.map(({node}) => (
             <div>
-              <h2>{node.title}</h2>
+              <Link href={`/post?slug=${node.slug}`}>
+                <a>
+                  <h2>{node.title}</h2>
+                </a>
+              </Link>
               <p>{node.text}</p>
+              <p>Written by: {node.author.firstName}</p>
+              <hr />
             </div>
           ))
         )}
