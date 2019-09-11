@@ -1,0 +1,3 @@
+query UserPermission1 {
+  scope(role: ANONYMOUS, operations: [CREATE, READ])
+}

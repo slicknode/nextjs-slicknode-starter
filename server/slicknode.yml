@@ -1,5 +1,6 @@
 dependencies:
   '@private/blog': ./modules/blog
   auth: latest
+  auth-email-password: latest
   core: latest
   relay: latest

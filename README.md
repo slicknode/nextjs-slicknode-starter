@@ -13,7 +13,7 @@ installed on your computer:
 
 ### Backend 
 
-To deploy the backend to your Slicknode account, navigate to the `server` folder run the following 
+To deploy the backend to your Slicknode account, navigate to the `server` folder and run the following 
 commands: 
 
     cd ./server
@@ -31,4 +31,4 @@ directory:
 
 This will be needed for the client setup. 
 
-
+### Client
