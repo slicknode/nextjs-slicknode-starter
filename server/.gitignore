@@ -1,0 +1,5 @@
+# Slicknode cache data
+.slicknode
+
+# Remove this if you want to share the same backend with other backend developers
+.slicknoderc

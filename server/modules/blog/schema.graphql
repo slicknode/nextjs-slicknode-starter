@@ -1,0 +1,18 @@
+type Blog_Post implements Node & TimeStampedInterface {
+  id: ID!
+  title: String!
+  slug: String! @unique
+  text: String! @input(type: MARKDOWN)
+  author: User
+  createdAt: DateTime!
+  lastUpdatedAt: DateTime
+}
+
+type Blog_Comment implements Node & TimeStampedInterface {
+  id: ID!
+  post: Blog_Post!
+  text: String! @input(type: MARKDOWN)
+  author: User
+  createdAt: DateTime!
+  lastUpdatedAt: DateTime
+}
