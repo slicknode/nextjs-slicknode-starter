@@ -14,6 +14,17 @@ const BLOG_POST_DETAIL = gql`query BlogPostDetail($slug: String!) {
     author {
       firstName
     }
+    comments {
+      edges {
+        node {
+          text
+          createdAt
+          author {
+            firstName
+          }
+        }
+      }
+    }
   }
 }`;
 
@@ -39,6 +50,20 @@ const PostPage = ({ loggedInUser, slug }) => {
             <p>
               {data.post.text}
             </p>
+            <div>
+              <h3>Comments</h3>
+              {data.post.comments.edges.map(({node}) => (
+                <div>
+                  <hr/>
+                  <div>
+                    {node.text}
+                  </div>
+                  <p>
+                    {node.author.firstName} {node.createdAt}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>

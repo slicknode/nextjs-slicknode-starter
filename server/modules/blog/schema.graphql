@@ -6,6 +6,9 @@ type Blog_Post implements Node & TimeStampedInterface {
   author: User
   createdAt: DateTime!
   lastUpdatedAt: DateTime
+  comments: [Blog_Comment!]! @relation(
+    path: "Blog_Post=post.Blog_Comment"
+  )
 }
 
 type Blog_Comment implements Node & TimeStampedInterface {
