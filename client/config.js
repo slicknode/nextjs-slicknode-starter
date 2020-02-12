@@ -4,4 +4,4 @@
  * @flow
  */
 
-export const SLICKNODE_ENDPOINT = 'https://wonderful-damspaceship-7501d297.us-east1.slicknode.com';
+export const SLICKNODE_ENDPOINT = 'https://api.us-east-1.aws.slicknode.com/v1/nextjs-slicknode-starter';
