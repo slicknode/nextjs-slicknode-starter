@@ -12,6 +12,7 @@ const BLOG_POST_LIST = gql`query MyQuery {
     totalCount
     edges {
       node {
+        id
         title
         slug
         text

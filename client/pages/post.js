@@ -13,6 +13,7 @@ const BLOG_POST_DETAIL = gql`query BlogPostDetail($slug: String!) {
     text
     author {
       firstName
+      lastName
     }
     comments {
       edges {
@@ -21,6 +22,7 @@ const BLOG_POST_DETAIL = gql`query BlogPostDetail($slug: String!) {
           createdAt
           author {
             firstName
+            lastName
           }
         }
       }
@@ -59,7 +61,7 @@ const PostPage = ({ loggedInUser, slug }) => {
                     {node.text}
                   </div>
                   <p>
-                    {node.author.firstName} {node.createdAt}
+                    {node.author.firstName} {node.author.firstName} {node.createdAt}
                   </p>
                 </div>
               ))}
